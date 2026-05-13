@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gherkin Test Design Assessment</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 1100px;
+      margin: auto;
+      padding: 30px;
+      line-height: 1.6;
+      background: #f8f9fa;
+    }
+
+    .container {
+      background: white;
+      padding: 40px;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+    }
+
+    h1, h2 {
+      color: #222;
+    }
+
+    .section {
+      margin-bottom: 35px;
+    }
+
+    .mark {
+      float: right;
+      color: #666;
+      font-size: 14px;
+    }
+
+    pre {
+      background: #f4f4f4;
+      padding: 15px;
+      border-left: 4px solid #444;
+      overflow-x: auto;
+    }
+
+    ul li {
+      margin-bottom: 8px;
+    }
+
+  </style>
+</head>
+<body>
+
+<div class="container">
+
+  <h1>Gherkin Test Design Assessment</h1>
+
+  <p><strong>Role:</strong> QA Engineer / Automation Engineer</p>
+  <p><strong>Duration:</strong> 90–120 Minutes</p>
+
+  <hr>
+
+  <div class="section">
+    <h2>Section 1 – Theory & Fundamentals <span class="mark">(20 Marks)</span></h2>
+
+    <h3>1. What is Gherkin?</h3>
+
+    <ul>
+      <li>Explain what Gherkin is.</li>
+      <li>Explain why it is used in software testing.</li>
+      <li>How does it support collaboration?</li>
+    </ul>
+
+    <h3>2. What is BDD?</h3>
+
+    <ul>
+      <li>Explain Behavior Driven Development.</li>
+      <li>How is it different from traditional test cases?</li>
+      <li>Benefits in Agile teams.</li>
+    </ul>
+
+    <h3>3. Define these keywords with examples:</h3>
+
+    <ul>
+      <li>Feature</li>
+      <li>Scenario</li>
+      <li>Given</li>
+      <li>When</li>
+      <li>Then</li>
+      <li>And</li>
+      <li>But</li>
+      <li>Background</li>
+      <li>Scenario Outline</li>
+      <li>Examples</li>
+    </ul>
+
+  </div>
+
+  <div class="section">
+
+    <h2>Section 2 – Analyze Existing Gherkin <span class="mark">(15 Marks)</span></h2>
+
+    <pre>
+Feature: Login functionality
+
+Scenario: Successful login
+  Given the user is on the login page
+  When the user enters valid credentials
+  And clicks the login button
+  Then the user should be redirected to dashboard
+    </pre>
+
+    <h3>Answer:</h3>
+
+    <ul>
+      <li>Identify Feature</li>
+      <li>Identify Scenario</li>
+      <li>Identify Preconditions</li>
+      <li>Identify Actions</li>
+      <li>Identify Expected Results</li>
+      <li>How can this be improved?</li>
+    </ul>
+
+  </div>
+
+  <div class="section">
+
+    <h2>Section 3 – Fix the Bad Scenarios <span class="mark">(20 Marks)</span></h2>
+
+    <pre>
+Scenario login
+Click username
+Click password
+Login successful
+    </pre>
+
+    <pre>
+Scenario: User login
+Given username
+When password
+Then login
+    </pre>
+
+    <pre>
+Scenario: Login
+Given user enters username
+Then dashboard appears
+When clicks login
+    </pre>
+
+    <p>Rewrite correctly using proper Gherkin syntax.</p>
+
+  </div>
+
+  <div class="section">
+
+    <h2>Section 4 – Convert Requirements into Gherkin <span class="mark">(20 Marks)</span></h2>
+
+    <h3>Password Reset</h3>
+
+    <ul>
+      <li>If email exists → reset email sent</li>
+      <li>If email does not exist → error displayed</li>
+    </ul>
+
+    <p>Write:</p>
+
+    <ul>
+      <li>1 positive scenario</li>
+      <li>1 negative scenario</li>
+    </ul>
+
+    <h3>Shopping Cart</h3>
+
+    <ul>
+      <li>User adds product to cart</li>
+      <li>Cart count updates</li>
+    </ul>
+
+    <h3>Registration</h3>
+
+    <ul>
+      <li>First Name</li>
+      <li>Last Name</li>
+      <li>Email</li>
+      <li>Password</li>
+    </ul>
+
+    <p>If mandatory fields are missing → registration fails.</p>
+
+  </div>
+
+  <div class="section">
+
+    <h2>Section 5 – Scenario Outline <span class="mark">(15 Marks)</span></h2>
+
+    <table border="1" cellpadding="8">
+      <tr>
+        <th>Username</th>
+        <th>Password</th>
+        <th>Result</th>
+      </tr>
+      <tr>
+        <td>validUser</td>
+        <td>validPass</td>
+        <td>Success</td>
+      </tr>
+      <tr>
+        <td>invalidUser</td>
+        <td>validPass</td>
+        <td>Failure</td>
+      </tr>
+      <tr>
+        <td>validUser</td>
+        <td>invalidPass</td>
+        <td>Failure</td>
+      </tr>
+    </table>
+
+    <p>Write a Scenario Outline.</p>
+
+  </div>
+
+  <div class="section">
+
+    <h2>Section 6 – Background <span class="mark">(10 Marks)</span></h2>
+
+    <p>Create a feature file using Background for:</p>
+
+    <ul>
+      <li>Successful login</li>
+      <li>Invalid login</li>
+      <li>Locked account</li>
+    </ul>
+
+  </div>
+
+  <div class="section">
+
+    <h2>Section 7 – Practical Exercise <span class="mark">(30 Marks)</span></h2>
+
+    <p>Design feature files for:</p>
+
+    <ul>
+      <li>Product Search</li>
+      <li>Checkout</li>
+      <li>Promotions</li>
+    </ul>
+
+  </div>
+
+</div>
+
+</body>
+</html>
