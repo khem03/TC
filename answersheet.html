@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Gherkin Assessment Answers</title>
+
+  <style>
+    body{
+      font-family: Arial;
+      max-width: 1100px;
+      margin:auto;
+      padding:30px;
+      background:#f8f9fa;
+    }
+
+    .container{
+      background:white;
+      padding:40px;
+      border-radius:8px;
+    }
+
+    pre{
+      background:#f4f4f4;
+      padding:15px;
+      border-left:4px solid green;
+    }
+  </style>
+
+</head>
+<body>
+
+<div class="container">
+
+<h1>Gherkin Assessment Answer Sheet</h1>
+
+<h2>1. What is Gherkin?</h2>
+
+<p>
+Gherkin is a business-readable language used in Behavior Driven Development (BDD)
+to describe how software should behave.
+</p>
+
+<h2>2. What is BDD?</h2>
+
+<p>
+BDD is a development methodology that improves collaboration between business,
+developers, and QA using examples written in natural language.
+</p>
+
+<h2>3. Gherkin Keywords</h2>
+
+<ul>
+  <li><strong>Feature:</strong> High-level functionality</li>
+  <li><strong>Scenario:</strong> Test case</li>
+  <li><strong>Given:</strong> Precondition</li>
+  <li><strong>When:</strong> Action</li>
+  <li><strong>Then:</strong> Expected result</li>
+</ul>
+
+<h2>4. Corrected Scenario Example</h2>
+
+<pre>
+Feature: Login
+
+Scenario: Successful login
+  Given the user is on the login page
+  When the user enters valid credentials
+  And clicks the login button
+  Then the dashboard should be displayed
+</pre>
+
+<h2>5. Scenario Outline</h2>
+
+<pre>
+Scenario Outline: Login validation
+  Given the user is on login page
+  When the user enters "<username>" and "<password>"
+  Then login result should be "<result>"
+
+Examples:
+| username    | password    | result  |
+| validUser   | validPass   | Success |
+| invalidUser | validPass   | Failure |
+| validUser   | invalidPass | Failure |
+</pre>
+
+<h2>6. Background Example</h2>
+
+<pre>
+Feature: Login
+
+Background:
+  Given the user is on the login page
+
+Scenario: Invalid login
+  When the user enters invalid credentials
+  Then an error message should be displayed
+</pre>
+
+<h2>7. Practical Exercise</h2>
+
+<p>
+Candidate should cover:
+</p>
+
+<ul>
+  <li>Positive scenarios</li>
+  <li>Negative scenarios</li>
+  <li>Validation scenarios</li>
+  <li>Edge cases</li>
+</ul>
+
+</div>
+
+</body>
+</html>
